@@ -1,9 +1,9 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:758225854029:task-definition/hotel-task:3",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:533267223083:task-definition/hotel-task1:7",
   "containerDefinitions": [
     {
       "name": "hotel-container",
-      "image": "758225854029.dkr.ecr.us-east-1.amazonaws.com/hotel-api:latest",
+      "image": "533267223083.dkr.ecr.us-east-1.amazonaws.com/hotel-repo@sha256:7bd13f0eeb87cc20dfbd3c429370d81d33e55cc3e8123a31a96e6a9a4ad73fd4",
       "cpu": 0,
       "portMappings": [
         {
@@ -22,19 +22,19 @@
         },
         {
           "name": "MYSQL_DATABASE",
-          "value": "hotel_watterson"
+          "value": "hotel_db?createDatabaseIfNotExist=true&serverTimezone=UTC"
         },
         {
           "name": "JWT_SECRET",
-          "value": "ZmFrZS1kZW1vLXNlY3JldC1mb3ItY291cnNlLXByb2plY3QtY2hhbmdlLW1lLWFzYXAtMTIzNDU2Nzg5"
+          "value": "GchPX4bzotRhYBArjDkR2FHmokpgB0psVOC2RNPujkQ="
         },
         {
           "name": "MYSQL_HOST",
-          "value": "hotel-watterson.cggarbore7uk.us-east-1.rds.amazonaws.com"
+          "value": "hotel-watterson.cxoos0ekct4d.us-east-1.rds.amazonaws.com"
         },
         {
           "name": "SPRING_DATASOURCE_PASSWORD",
-          "value": "saeed2005$"
+          "value": "yahyadbonline"
         }
       ],
       "environmentFiles": [],
@@ -44,7 +44,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/hotel-task",
+          "awslogs-group": "/ecs/hotel-task1",
           "awslogs-create-group": "true",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
@@ -54,11 +54,11 @@
       "systemControls": []
     }
   ],
-  "family": "hotel-task",
-  "taskRoleArn": "arn:aws:iam::758225854029:role/LabRole",
-  "executionRoleArn": "arn:aws:iam::758225854029:role/LabRole",
+  "family": "hotel-task1",
+  "taskRoleArn": "arn:aws:iam::533267223083:role/LabRole",
+  "executionRoleArn": "arn:aws:iam::533267223083:role/LabRole",
   "networkMode": "awsvpc",
-  "revision": 3,
+  "revision": 7,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -73,6 +73,9 @@
     },
     {
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
     },
     {
       "name": "com.amazonaws.ecs.capability.task-iam-role"
@@ -93,8 +96,8 @@
   "placementConstraints": [],
   "compatibilities": [
     "EC2",
-    "FARGATE",
-    "MANAGED_INSTANCES"
+    "MANAGED_INSTANCES",
+    "FARGATE"
   ],
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
@@ -104,9 +107,9 @@
     "FARGATE"
   ],
   "cpu": "512",
-  "memory": "1024",
-  "registeredAt": "2026-05-21T10:39:03.594Z",
-  "registeredBy": "arn:aws:sts::758225854029:assumed-role/voclabs/user4788304=Saeed_Awad",
+  "memory": "2048",
+  "registeredAt": "2026-05-22T07:07:24.251Z",
+  "registeredBy": "arn:aws:sts::533267223083:assumed-role/voclabs/user4800343=202303161@bethlehem.edu",
   "enableFaultInjection": false,
   "tags": []
 }
