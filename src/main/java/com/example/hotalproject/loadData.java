@@ -23,6 +23,8 @@ public class loadData {
     @Bean
     CommandLineRunner seedData(HotelRepository hotelRepository,
                                RoomTypeRepository roomTypeRepository,
+
+
                                AppUserRepository appUserRepository,
                                PasswordEncoder passwordEncoder) {
         return args -> {
